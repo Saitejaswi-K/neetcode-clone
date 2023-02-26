@@ -21,5 +21,5 @@ module.exports.updateCourse = async function(courseId, updateInput){
         };
         const course = new courseModel(firstCourseInput);
         await course.save();
-    }
+    
 }*/
