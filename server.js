@@ -1,6 +1,6 @@
 const dotenv = require("dotenv");
 const express = require("express");
-const mongoDB =  require("mongoose");
+const mongoose =  require("mongoose");
 const courseLib = require("./backend/lib/courseLib");
 
 dotenv.config();
@@ -19,16 +19,16 @@ app.get("/", function(req, res){
     console.log("Server is running on http://localhost:3000");
 })*/
 
-mongoDB.set('strictQuery', false)
-mongoDB.connect(process.env.MONGO_CONNECTION_STRING, async function(err){
+mongoose.set('strictQuery', false)
+mongoose.connect(process.env.MONGO_CONNECTION_STRING, async function(err){
     if(err){
         console.error(err);
     }
     else{
-        console.log("Successfull DB connection");
-        await courseLib.createCourse();
-        const course = await courseLib.getAllCourses();
-        console.log(course);
+        // console.log("Successfull DB connection");
+        // await courseLib.createCourse();
+        // const course = await courseLib.getAllCourses();
+        // console.log(course);
         app.listen(3000, function(){
             console.log("Server is running on http://localhost:3000");
         }); 
