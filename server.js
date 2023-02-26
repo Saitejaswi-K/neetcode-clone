@@ -5,7 +5,7 @@ app.use(express.static("frontend"));
 
 
 app.get("/", function(req, res){
-    res.sendFile(__dirname + "/frontend/simpleHtml.html");
+    res.sendFile(__dirname + "/frontend/index.html");
 })
 
 app.listen(3000, function(){
